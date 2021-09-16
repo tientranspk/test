@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[report] (
+    [ID]               BIGINT         IDENTITY (1, 1) NOT NULL,
+    [transaction_code] NVARCHAR (9)   NULL,
+    [transaction_id]   INT            NULL,
+    [customer_id]      INT            NULL,
+    [store_id]         INT            NULL,
+    [date]             DATETIME       NOT NULL,
+    [notes]            NVARCHAR (255) NULL,
+    [product_id]       INT            NULL,
+    [discount]         INT            NULL,
+    [total_money]      INT            NULL,
+    [origin_price]     INT            NULL,
+    [input]            INT            NULL,
+    [output]           INT            NOT NULL,
+    [price]            INT            NULL,
+    [deleted]          SMALLINT       NOT NULL,
+    [created]          DATETIME       NOT NULL,
+    [updated]          DATETIME       NOT NULL,
+    [user_init]        INT            NULL,
+    [user_upd]         INT            NULL,
+    [sale_id]          INT            NULL,
+    [supplier_id]      INT            NULL,
+    [type]             SMALLINT       NULL,
+    [stock]            INT            NULL,
+    CONSTRAINT [PK_report] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

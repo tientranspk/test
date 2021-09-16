@@ -1,0 +1,52 @@
+﻿CREATE TABLE [dbo].[orders_detail] (
+    [Id]                    UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [ProductId]             UNIQUEIDENTIFIER NULL,
+    [UnitConvertId]         UNIQUEIDENTIFIER NULL,
+    [OrderId]               UNIQUEIDENTIFIER NULL,
+    [so_sp_id]              NVARCHAR (200)   NULL,
+    [so_id]                 NVARCHAR (200)   NULL,
+    [product_name]          NVARCHAR (200)   NULL,
+    [product_unit]          NVARCHAR (200)   NULL,
+    [ID_Unit]               NVARCHAR (200)   NULL,
+    [orders_status]         NVARCHAR (45)    NULL,
+    [orders_status_2]       NVARCHAR (45)    NULL,
+    [customer_name]         NVARCHAR (200)   NULL,
+    [ex_delivery_date]      DATE             NULL,
+    [ex_delivery_new_date]  DATE             NULL,
+    [orders_date]           DATETIME         NULL,
+    [inventory_units]       NVARCHAR (45)    NULL,
+    [notes]                 NVARCHAR (2000)  NULL,
+    [qc_package]            NVARCHAR (1000)  NULL,
+    [delivery_info]         NVARCHAR (100)   NULL,
+    [reality_delivery_date] DATE             NULL,
+    [image_1]               NVARCHAR (500)   NULL,
+    [image_2]               NVARCHAR (500)   NULL,
+    [image_3]               NVARCHAR (500)   NULL,
+    [lot_status]            NVARCHAR (50)    NULL,
+    [temp_sls]              DECIMAL (18, 2)  NULL,
+    [lot_type]              NVARCHAR (100)   NULL,
+    [product_sls]           DECIMAL (18, 10) DEFAULT ((0)) NOT NULL,
+    [Unit_convert]          DECIMAL (18, 10) DEFAULT ((0)) NOT NULL,
+    [product_price]         DECIMAL (18, 5)  DEFAULT ((0)) NOT NULL,
+    [product_amount]        DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [reality_sls]           DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [inventory_sls]         DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [reality_order_sls]     DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [CreatedOn]             DATETIME2 (7)    NULL,
+    [CreatedBy]             NVARCHAR (MAX)   NULL,
+    [UpdatedOn]             DATETIME2 (7)    NULL,
+    [UpdatedBy]             NVARCHAR (MAX)   NULL,
+    [LastAccessed]          DATETIME2 (7)    NULL,
+    [deleted]               INT              NULL,
+    [IpAddress]             NVARCHAR (MAX)   NULL,
+    [InvoiceUnit]           NVARCHAR (200)   NULL,
+    [SourcingName]          NVARCHAR (MAX)   NULL,
+    CONSTRAINT [pk_OrdersDetail] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_orders_detail_orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [dbo].[orders] ([Id]) ON DELETE CASCADE
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_orders_detail_OrderId]
+    ON [dbo].[orders_detail]([OrderId] ASC);
+

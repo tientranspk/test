@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[log_lot] (
+    [ID]                   INT            IDENTITY (1, 1) NOT NULL,
+    [lot_name]             NVARCHAR (200) NOT NULL,
+    [bo_code]              NVARCHAR (200) NULL,
+    [so_code]              NVARCHAR (200) NULL,
+    [order_id]             NVARCHAR (200) NULL,
+    [prd_code]             NVARCHAR (200) NULL,
+    [created]              DATE           NULL,
+    [updated]              DATETIME       NULL,
+    [user_init]            INT            NULL,
+    [user_upd]             INT            NULL,
+    [lot_type]             NVARCHAR (100) NULL,
+    [lot_status]           NVARCHAR (200) NULL,
+    [reason]               NVARCHAR (200) NULL,
+    [return_date]          DATE           NULL,
+    [note]                 NVARCHAR (200) NULL,
+    [return_sls]           NVARCHAR (50)  NULL,
+    [inventory_return_sls] NVARCHAR (50)  NULL,
+    [prd_unit]             NVARCHAR (200) NULL,
+    [unit_by_inventory]    NVARCHAR (200) NULL,
+    [type]                 NVARCHAR (50)  NULL,
+    [check_person]         NVARCHAR (200) NULL,
+    [deleted]              INT            NULL,
+    [note_ncc]             NVARCHAR (200) NULL,
+    CONSTRAINT [PK_log_lot] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

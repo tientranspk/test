@@ -1,0 +1,52 @@
+﻿CREATE TABLE [dbo].[input] (
+    [Id]                    UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [SupplierId]            UNIQUEIDENTIFIER NULL,
+    [bo_id]                 NVARCHAR (250)   NULL,
+    [bo_code]               NVARCHAR (45)    NULL,
+    [contract_required]     NVARCHAR (45)    NULL,
+    [contract_image]        NVARCHAR (200)   NULL,
+    [supplier_name]         NVARCHAR (200)   NULL,
+    [bo_name]               NVARCHAR (100)   NULL,
+    [input_date]            DATETIME         NULL,
+    [sales_person]          NVARCHAR (45)    NULL,
+    [bo_update]             NVARCHAR (45)    NULL,
+    [ex_delivery_date]      DATE             NULL,
+    [check_next_date]       DATE             NULL,
+    [check_progress]        NVARCHAR (45)    NULL,
+    [payment_method]        NVARCHAR (MAX)   NULL,
+    [vat]                   NVARCHAR (45)    NULL,
+    [payment_status]        NVARCHAR (45)    NULL,
+    [return_date]           DATE             NULL,
+    [notes]                 NVARCHAR (2000)  NULL,
+    [bo_status]             NVARCHAR (45)    NULL,
+    [delivery_status]       NVARCHAR (45)    NULL,
+    [reality_delivery_date] DATE             NULL,
+    [bb_image]              NVARCHAR (200)   NULL,
+    [reality_payment_date]  DATETIME         NULL,
+    [lot_status]            NVARCHAR (20)    NULL,
+    [vat_price]             DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [vat_not_include]       DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [total_price]           DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [payment]               DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [lack]                  DECIMAL (18, 2)  DEFAULT ((0)) NOT NULL,
+    [CreatedOn]             DATETIME2 (7)    NULL,
+    [CreatedBy]             NVARCHAR (MAX)   NULL,
+    [UpdatedOn]             DATETIME2 (7)    NULL,
+    [UpdatedBy]             NVARCHAR (MAX)   NULL,
+    [LastAccessed]          DATETIME2 (7)    NULL,
+    [deleted]               INT              NULL,
+    [IpAddress]             NVARCHAR (MAX)   NULL,
+    [InvoiceType]           NVARCHAR (MAX)   NULL,
+    [ParentId]              UNIQUEIDENTIFIER NULL,
+    [MisaCode]              NVARCHAR (MAX)   NULL,
+    [IsSyncMisa]            INT              NOT NULL,
+    [Edited]                NVARCHAR (MAX)   NULL,
+    CONSTRAINT [pk_input] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_input_suppliers_SupplierId] FOREIGN KEY ([SupplierId]) REFERENCES [dbo].[suppliers] ([Id])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_input_SupplierId]
+    ON [dbo].[input]([SupplierId] ASC);
+

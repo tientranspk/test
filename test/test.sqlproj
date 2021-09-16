@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>test</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ac8577cd-d176-4811-a43b-69d6ea809b34}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>test</RootNamespace>
+    <AssemblyName>test</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\transaction_io_order.sql" />
+    <Build Include="dbo\Tables\unit_conversion.sql" />
+    <Build Include="dbo\Tables\input.sql" />
+    <Build Include="dbo\Tables\orders_detail.sql" />
+    <Build Include="dbo\Tables\TemporaryData.sql" />
+    <Build Include="dbo\Tables\input_orders_detail.sql" />
+    <Build Include="dbo\Tables\transaction_buy_sales.sql" />
+    <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />
+    <Build Include="dbo\Tables\customer_field.sql" />
+    <Build Include="dbo\Tables\lot.sql" />
+    <Build Include="dbo\Tables\CategoryClaims.sql" />
+    <Build Include="dbo\Tables\customer_price_status.sql" />
+    <Build Include="dbo\Tables\customer_status.sql" />
+    <Build Include="dbo\Tables\customer_status_order.sql" />
+    <Build Include="dbo\Tables\UndoWarehouses.sql" />
+    <Build Include="dbo\Tables\customers.sql" />
+    <Build Include="dbo\Tables\TmpData.sql" />
+    <Build Include="dbo\Tables\log_lot.sql" />
+    <Build Include="dbo\Tables\Tien.sql" />
+    <Build Include="dbo\Tables\orders_status.sql" />
+    <Build Include="dbo\Tables\Packages.sql" />
+    <Build Include="dbo\Tables\TempPackages.sql" />
+    <Build Include="dbo\Tables\permissions.sql" />
+    <Build Include="dbo\Tables\products.sql" />
+    <Build Include="dbo\Tables\ActivityLogs.sql" />
+    <Build Include="dbo\Tables\Departments.sql" />
+    <Build Include="dbo\Tables\Domains.sql" />
+    <Build Include="dbo\Tables\products_field.sql" />
+    <Build Include="dbo\Tables\EmailTemplates.sql" />
+    <Build Include="dbo\Tables\products_field_group.sql" />
+    <Build Include="dbo\Tables\Employees.sql" />
+    <Build Include="dbo\Tables\products_group.sql" />
+    <Build Include="dbo\Tables\Logs.sql" />
+    <Build Include="dbo\Tables\products_manufacture.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\products_materials.sql" />
+    <Build Include="dbo\Tables\Settings.sql" />
+    <Build Include="dbo\Tables\products_staple.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\products_unit.sql" />
+    <Build Include="dbo\Tables\RoleClaims.sql" />
+    <Build Include="dbo\Tables\projects.sql" />
+    <Build Include="dbo\Tables\QuoteRequest.sql" />
+    <Build Include="dbo\Tables\UserClaims.sql" />
+    <Build Include="dbo\Tables\projects_products.sql" />
+    <Build Include="dbo\Tables\report.sql" />
+    <Build Include="dbo\Tables\UserLogins.sql" />
+    <Build Include="dbo\Tables\sales.sql" />
+    <Build Include="dbo\Tables\UserRoles.sql" />
+    <Build Include="dbo\Tables\sourcing_need.sql" />
+    <Build Include="dbo\Tables\ProductClaims.sql" />
+    <Build Include="dbo\Tables\stores.sql" />
+    <Build Include="dbo\Tables\UserTokens.sql" />
+    <Build Include="dbo\Tables\suppliers.sql" />
+    <Build Include="dbo\Tables\suppliers_location.sql" />
+    <Build Include="dbo\Tables\suppliers_offer_detail.sql" />
+    <Build Include="dbo\Tables\suppliers_status.sql" />
+    <Build Include="dbo\Tables\templates.sql" />
+    <Build Include="dbo\Tables\PackageInStock.sql" />
+    <Build Include="dbo\Tables\orders.sql" />
+    <Build Include="dbo\Tables\quotes.sql" />
+    <Build Include="dbo\Tables\PackageTransaction.sql" />
+    <Build Include="dbo\Tables\quotes_detail.sql" />
+    <Build Include="Security\develop.sql" />
+    <Build Include="Security\develop_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\GetProductForSupplyChains.sql" />
+    <Build Include="dbo\Stored Procedures\GetPlainingKPIOrders.sql" />
+    <Build Include="dbo\Stored Procedures\GetCloudStock.sql" />
+    <Build Include="dbo\Stored Procedures\GetAccountingData.sql" />
+    <Build Include="dbo\Stored Procedures\GetProcessPlainingOrders.sql" />
+  </ItemGroup>
+</Project>

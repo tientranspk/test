@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [develop]
+    WITH PASSWORD = N'krqbjdsjrkwcs2{iom<KatFxmsFT7_&#$!~<hiv$qmoeQtdp', SID = 0x5BB9B8533EA0F14E800E9FE3A391812B, DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+
